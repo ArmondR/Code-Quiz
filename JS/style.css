@@ -1,0 +1,33 @@
+.choices {
+    list-style: upper-alpha;
+   
+}
+
+.choices li {
+    background-color:cadetblue;
+    padding:10px;
+    margin:5px 10px;
+    border-radius:5px;
+    width:10%;
+}
+
+#quizContainer {
+    display: none;
+}
+
+#scoreContainer {
+    display: none;
+}
+
+#start {
+    display: block;
+    background-color:cyan;
+    border-radius: 5px;
+    text-align: center;
+    border:2px solid black;
+    padding: 15px;
+}
+
+.score-item {
+    text-decoration: none;
+}

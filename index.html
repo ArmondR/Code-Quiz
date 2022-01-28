@@ -4,22 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-       .choices {
-        list-style: upper-alpha;
-      } 
-    </style>
+    <link rel="stylesheet" href="./JS/style.css">
   </head>
   <body>
-    <div id="timer"></div>
 
-    <div id="question"></div>
+    <div class= "strtBtn" id="start">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure illum veritatis, exercitationem ad fugit maxime voluptates repellat, quae assumenda ducimus, id quia! Rem libero soluta maiores expedita eveniet architecto distinctio at, culpa asperiores quo optio dolorem dolore inventore aperiam recusandae.</p>
+      <button class="start-btn" id="begin" type="button">Start</button>
+    </div>
 
-    <form id="highScore"></form>
+    <div id= quizContainer>
+      <div id="timer"></div>
 
-    <ol id="option-list" class="choices"></ol>
+      <div id="question"></div>
 
-    <div id="question-result"></div>
+      <ol id="option-list" class="choices"></ol>
+
+      <div id="question-result"></div>
+   </div>
+
+    <!-- Score Form -->
+    <div id="scoreContainer">
+      <form id="score-form">
+        <div class="score-input">
+          <button class="score-btn" id="save-score" type="submit">Submit</button>
+        </div>
+        
+        <div class="score-input">
+          <input type="text" name="score-name" placeholder="Enter Initials" />
+        </div>
+      </form>
+      <ul class="score-list" id="scores"></ul>
+    </div>
 
     <!-- <div id="change-question">Change Question</div> -->
 
