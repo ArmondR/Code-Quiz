@@ -9,11 +9,15 @@
   <body>
 
     <div class= "strtBtn" id="start">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure illum veritatis, exercitationem ad fugit maxime voluptates repellat, quae assumenda ducimus, id quia! Rem libero soluta maiores expedita eveniet architecto distinctio at, culpa asperiores quo optio dolorem dolore inventore aperiam recusandae.</p>
+      <h1 class= "title">Quiz Challenge</h1>
+      <p>
+        Try to answer as many questions as you can within the time limit. 
+        Keep in mind that you will be penalized for every incorrect response. 
+      </p>
       <button class="start-btn" id="begin" type="button">Start</button>
     </div>
 
-    <div id= quizContainer>
+    <div id= quizContainer class = "qContainer">
       <div id="timer"></div>
 
       <div id="question"></div>
@@ -25,6 +29,7 @@
 
     <!-- Score Form -->
     <div id="scoreContainer">
+
       <form id="score-form">
         <div class="score-input">
           <button class="score-btn" id="save-score" type="submit">Submit</button>

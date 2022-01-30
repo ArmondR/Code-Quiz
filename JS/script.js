@@ -31,21 +31,46 @@ var startEl = document.querySelector("#begin");
 var questionIndex = 0;
 var correctCount = 0;
 
-var time= 20;
+var time = 20;
 var intervalId;
 
 
-var endQuiz = function() {
-  clearInterval(intervalId);
-  scoreEl.style.display = "block";
-  //var body = document.body;
+ var endQuiz = function () {
+   clearInterval(intervalId);
+   //clearInterval(intervalId);
+   questionContainerEl.style.display = "none";
+   scoreEl.style.display = "flex";
+   //var body = document.body;
   //body.innerHTML = "Game over, You scored " + correctCount;
+  //saveScore();
+ };
+
+
+var saveScore = function () {
+
+  //takes input value and puts it into an object with score
+  var nameInput = document.querySelector("input[name='score-name']").value
+  var score = {
+    name: nameInput,
+    score: correctCount
+  }
+
+  var userScore = JSON.parse(localStorage.getItem("userScore") || "[]");
+
+  userScore.push(score);
+
+  localStorage.setItem("userScore", JSON.stringify(userScore));
+  return;
+
 };
 
-var updateTime = function() {
+
+var updateTime = function () {
   time--;
-  timerEl.textContent = time;
-  if(time <=0) {
+  timerEl.innerHTML = "Remaining Time: " + time;
+  if (time <= 0) {
+    //document.innerHTML = "";
+    //saveScore
     endQuiz();
   }
 };
@@ -60,8 +85,8 @@ function renderQuestion() {
   // choose answer functionality
   optionListEl.addEventListener("click", chooseAnswer);
 
-  
-  if (time == 0) {
+
+  if (time <= 0) {
     updateTime();
     return;
   }
@@ -84,7 +109,7 @@ function renderQuestion() {
 };
 
 // generates next question
-var nextQuestion = function(){
+var nextQuestion = function () {
   questionIndex++
   if (questionIndex === questions.length) {
     time = 0;
@@ -92,37 +117,36 @@ var nextQuestion = function(){
   renderQuestion();
 };
 
-var chooseAnswer = function(event){
-  if(event.target.matches("li")) {
+var chooseAnswer = function (event) {
+  if (event.target.matches("li")) {
     var answer = event.target.textContent;
-    if(answer === questions[questionIndex].answer){
+    if (answer === questions[questionIndex].answer) {
       questionResultEl.textContent = "CORRECT!";
       correctCount++;
-    }else {
+    } else {
       questionResultEl.textContent = "Incorrect";
       time--;
       timerEl.textContent = time;
     }
   }
-setTimeout(nextQuestion, 2000); // if answer incorrect; 2 sec penalty
+  setTimeout(nextQuestion, 2000); // if answer incorrect; 2 sec penalty
 };
 
-// Score Form Submission Event.
-//var scoreRecord = function(){
-//scoreEl.style.display = "block";
-
-scoreBtn.addEventListener("click", function(event){
+// score submit btn
+scoreBtn.addEventListener("click", function (event) {
   event.preventDefault();
+  saveScore();
+  //event.stopPropagation();
 
   var scoreListEl = document.createElement("li");
   var nameInput = document.querySelector("input[name='score-name']").value
-    scoreListEl.className = "score-item";
-    scoreListEl.textContent = nameInput;
-    scoreLi.appendChild(scoreListEl);
-    scoreFormEl.reset();
+  scoreListEl.className = "score-item";
+  scoreListEl.textContent = nameInput;
+  scoreLi.appendChild(scoreListEl);
+  scoreFormEl.reset();
 });
 
-//};
+
 
 // Start Game
 strtBtnEl.addEventListener("click", renderQuestion);
