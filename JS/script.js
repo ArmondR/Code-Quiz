@@ -10,6 +10,54 @@ var questions = [
     choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
     answer: "parentheses",
   },
+  {
+    question:
+      "Which is NOT a Javascript data type?",
+    choices: ["boolean", "BigInt", "undefined", "alpha"],
+    answer: "alpha",
+  },
+  {
+    question:
+      "Which is used to create a comment in Javascript?",
+    choices: ["//", "|", "<", "*"],
+    answer: "//",
+  },
+  {
+    question:
+      "Which is NOT a looping structure in Javascript?",
+    choices: ["for", "do-for", "while", "do-while"],
+    answer: "do-for",
+  },
+  {
+    question:
+      "What function is used to convert a string to an integer? ",
+    choices: ["parseInt()", "JSON.stringify()", "push()", "pop()"],
+    answer: "parseInt()",
+  },
+  {
+    question:
+      "What would be the result of 4+2+'9'?",
+    choices: ["15", "21", "69", "14"],
+    answer: "69",
+  },
+  {
+    question:
+      "What property is used to keep the browser from refreshing after submitting a form in Javascript?",
+    choices: ["reset()", "event.stopPropagation", "event.preventDefault()", "clearInterval"],
+    answer: "event.preventDefault()",
+  },
+  {
+    question:
+      "Which is NOT a variable declaration in Javascript?",
+    choices: ["let", "const", "var", "--*"],
+    answer: "--*",
+  },
+  {
+    question:
+      "____ is used to link your HTML to your external Javascript",
+    choices: ["<script>", "<link>", "ref", "src"],
+    answer: "<script>",
+  },
 ];
 
 var questionContainerEl = document.querySelector("#quizContainer");
@@ -133,11 +181,12 @@ scoreBtn.addEventListener("click", function (event) {
   event.preventDefault();
   saveScore();
 
-  var scoreListEl = document.createElement("li");
-  var nameInput = document.querySelector("input[name='score-name']").value
-  scoreListEl.className = "score-item";
-  scoreListEl.textContent = nameInput;
-  scoreLi.appendChild(scoreListEl);
+  //Creates Dynamic list element
+  // var scoreListEl = document.createElement("li");
+  // var nameInput = document.querySelector("input[name='score-name']").value
+  // scoreListEl.className = "score-item";
+  // scoreListEl.textContent = nameInput;
+  // scoreLi.appendChild(scoreListEl);
   scoreFormEl.reset();
 });
 
