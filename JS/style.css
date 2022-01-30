@@ -21,17 +21,23 @@ body{
 
 .start-btn {
     padding:5px 20px;
-    margin: 10px 0;
+    margin: 40px 0;
+    background-color: yellow;
+    border-radius: 5px;
 }
 
 
  .choices li {
     background-color:cadetblue;
     padding:5px;
-    margin:5px 10px;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    /* margin:5px 10px; */
     border-radius:5px;
     width:55%;
     list-style: upper-alpha;
+   
 } 
 
 #quizContainer {
@@ -40,8 +46,14 @@ body{
 
 #scoreContainer {
     display: none;
-    flex-direction: column;
+    width: 70%;
+    height: 50%;
+    border: 2px solid black;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
 }
+
 
 #start {
     display: block;
@@ -50,13 +62,14 @@ body{
     text-align: center;
     border:2px solid black;
     padding: 15px;
-    width: 80%;
+    width: 70%;
+    height: 50%;
 }
 
 .qContainer {
     border: 2px solid black;
     border-radius: 5px;
-    width: 80%; 
+    width: 70%; 
     padding: 10px;
     box-shadow: 0 0 10px 2px;
 }
@@ -72,6 +85,13 @@ body{
     list-style-type: none;
 }
 
+.score-btn {
+    padding:5px 20px;
+    margin: 40px 0;
+    background-color: yellow;
+    border-radius: 5px;
+}
+
 #question-result {
     border-top: 1px solid black;
     font-size: 24px;
@@ -81,3 +101,4 @@ body{
     font-weight: bold;
     font-size: 20px;
 }
+

@@ -37,12 +37,10 @@ var intervalId;
 
  var endQuiz = function () {
    clearInterval(intervalId);
-   //clearInterval(intervalId);
    questionContainerEl.style.display = "none";
    scoreEl.style.display = "flex";
    //var body = document.body;
   //body.innerHTML = "Game over, You scored " + correctCount;
-  //saveScore();
  };
 
 
@@ -69,8 +67,6 @@ var updateTime = function () {
   time--;
   timerEl.innerHTML = "Remaining Time: " + time;
   if (time <= 0) {
-    //document.innerHTML = "";
-    //saveScore
     endQuiz();
   }
 };
@@ -136,7 +132,6 @@ var chooseAnswer = function (event) {
 scoreBtn.addEventListener("click", function (event) {
   event.preventDefault();
   saveScore();
-  //event.stopPropagation();
 
   var scoreListEl = document.createElement("li");
   var nameInput = document.querySelector("input[name='score-name']").value
@@ -150,7 +145,3 @@ scoreBtn.addEventListener("click", function (event) {
 
 // Start Game
 strtBtnEl.addEventListener("click", renderQuestion);
-
-//renderQuestion();
-//optionListEl.addEventListener("click", chooseAnswer);
-
