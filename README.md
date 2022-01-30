@@ -15,13 +15,15 @@ This application is still in the working. I will be implementing visual enhancem
 
 ## Links
 
-[Link to Deployed Application]()
+[Link to Deployed Application](https://armondr.github.io/Code-Quiz/)
 
-[Link to Application Repository]()
+[Link to Application Repository](https://github.com/ArmondR/Code-Quiz)
 
 ## Screenshots
 
-![]()
+![](quiz-title-page.png)
+
+![](code-question.png)
 
 ## Credits
 
